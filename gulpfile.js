@@ -173,7 +173,7 @@ gulp.task('default', () => {
 var deploy = require('gulp-deploy-git');
 
 gulp.task('deploy', function() {
-    return gulp.src('dist/**/*')
+    return gulp.src('**/*', { read: false, cwd: 'dist' })
         .pipe(deploy({
             repository: 'https://github.com/Wylveragon/test',
             remoteBranch: 'gh-pages'
